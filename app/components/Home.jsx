@@ -44,8 +44,10 @@ var Home = React.createClass({
       .field('caption', img.caption)
       .field('size', img.size)
       .attach('image', img.file, img.file.name)
-      .set('Accept', 'application/json')
+      .set('Accept', '/')
       .set('Access-Control-Allow-Origin', "*")
+      .set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+      .set('Content-Type', 'multipart/form-data')
       .on('progress', function(e) {
         console.log('Percentage done: ', e.percent);
       })

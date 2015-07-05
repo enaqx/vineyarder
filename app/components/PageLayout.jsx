@@ -3,12 +3,6 @@ var _ = require("lodash");
 var React = require("react");
 var Router = require("react-router");
 
-// update the current page state with ourState, if history.replaceState
-//   is defined. If not, don't bother.
-var setHistoryState = function(ourState) {
-  var newState = _.extend({}, history.state, ourState);
-  history.replaceState(newState);
-};
 
 var PageLayout = React.createClass({
   mixins: [Router.State],

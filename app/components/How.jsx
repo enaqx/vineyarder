@@ -26,6 +26,7 @@ var How = React.createClass({
         <section className="section-services">
           <h2 className="title-section">Services</h2>
           <div className="grid-3 subsection">
+            <img alt="Design Services" src="/img/services-design-160x160.svg"/>
             <div className="meta">
               <h3 className="subtitle-section">Your Grape</h3>
               <p>Upload image of your grape tree</p>

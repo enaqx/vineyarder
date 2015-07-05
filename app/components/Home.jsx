@@ -4,14 +4,11 @@ var React = require('react');
 var Router = require('react-router');
 var PageLayout = require('./PageLayout');
 var VineyarderRes = require('../assets/resources/VineyarderResources');
-var Modal = require('react-bootstrap/lib/ModalHeader');
 var Button = require('react-bootstrap/lib/Button');
 var Dropzone = require('./Dropzone');
 var uuid = require('node-uuid');
 
-var request = require('superagent-bluebird-promise');
-var Promise = require('bluebird');
-
+var request = require('superagent');
 var URL = 'https://microsoft-apiapp82b3930a4b16420fb7f82e43c37cedce.azurewebsites.net/api/Data/';
 
 var Home = React.createClass({
@@ -32,44 +29,33 @@ var Home = React.createClass({
     };
 
     var url = URL;
-    var requests = [];
-    var promise;
-    var self = this;
     var img = newFile;
 
-    promise = request
+    console.log({
+      'name': img.name,
+      'altText': img.altText,
+      'caption': img.caption,
+      'size': img.size,
+      'imageFile': img.file,
+      'imageName': img.file.name
+    });
+    console.log(url, img)
+    request
       .post(url)
-      .field('name', img.name)
-      .field('altText', img.altText)
-      .field('caption', img.caption)
-      .field('size', img.size)
-      .attach('image', img.file, img.file.name)
-      .set('Accept', '/')
-      .set('Access-Control-Allow-Origin', "*")
-      .set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-      .set('Content-Type', 'multipart/form-data')
-      .on('progress', function(e) {
-        console.log('Percentage done: ', e.percent);
+      .send({
+        'name': img.name,
+      /*  'altText': img.altText,
+        'caption': img.caption,
+        'size': img.size,
+        'imageFile': img.file,
+        'imageName': img.file.name*/
       })
-      .promise()
-      .then(function(res){
-        var newImg = res.body.result;
-        newImg.id = img.id;
-      })
-      .catch(function(err){
-        self.executeAction(savedNewImageErrorAction, err.res.body.errors);
+      .set('Accept', 'application/json')
+      .end(function(err, res) {
+        if ( err ) console.log(err), res;
+        console.log(res);
       });
-    requests.push(promise);
 
-    Promise
-      .all(requests)
-      .then(function(){
-        console.log('all done');
-      })
-      .catch(function(){
-        console.log('done with errors');
-      });
-    console.log(newFile);
   },
 
   render: function() {
@@ -117,6 +103,8 @@ var Home = React.createClass({
           <picture className="home-collage">
              <img src="/img/home-collage-mobile-1000x625.jpg" alt="Desktop &amp; Mobile Apps" />
           </picture>
+
+
 
         </section>
       </PageLayout>

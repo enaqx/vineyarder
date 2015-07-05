@@ -5,6 +5,7 @@ var Router = require('react-router');
 var Layout = require('./Layout');
 var Home = require('./Home');
 var How = require('./How');
+var Drawing = require('./DrawingCanvas');
 
 
 var NotFound = require('./NotFound');
@@ -30,6 +31,8 @@ var routes = (
 
     <Route path="styleguide/base" name="styleguide-base" handler={StyleguideBase}/>
     <Route path="styleguide/case-study" name="styleguide-case-study" handler={StyleguideCaseStudy}/>
+
+    <Route name="drawing" path="drawing/?" handler={Drawing}/>
 
     <NotFoundRoute name="not-found" handler={NotFound}/>
   </Route>

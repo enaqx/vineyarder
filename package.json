@@ -28,6 +28,7 @@
     "react-file-input": "^0.1.8",
     "react-modal": "^0.2.0",
     "react-router": "^0.13.3",
+    "request": "^2.58.0",
     "sitemap": "^0.7.4",
     "superagent": "^1.2.0",
     "superagent-bluebird-promise": "^2.0.2"

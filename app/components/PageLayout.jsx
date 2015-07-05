@@ -21,7 +21,6 @@ var PageLayout = React.createClass({
     //   throttle fires it? Not sure). Else we'd use event.target, not this.refs
     if (this.refs.page) {
       var page = this.refs.page.getDOMNode();
-      setHistoryState({lastScrollTop: page.scrollTop});
     }
   }, 500),
 

@@ -5,12 +5,7 @@ var Router = require('react-router');
 var Layout = require('./Layout');
 var Home = require('./Home');
 var How = require('./How');
-
-// TODO: Rename to "Why"
-var What = require('./What');
-
-// TODO: Remove
-var Product = require('./Product');
+var Tree = require('./Tree');
 
 
 var NotFound = require('./NotFound');
@@ -29,16 +24,13 @@ var NotFoundRoute = Router.NotFoundRoute;
 
 /* eslint-disable no-undef */
 
-// TODO: Change "What" to "Why"
-// TODO: Remove Products, Careers, Job
 var routes = (
   <Route name="appBody" path="/" handler={Layout}>
     <DefaultRoute name="home" handler={Home}/>
 
     <Route name="how" path="how/?" handler={How}/>
 
-    <Route name="what" path="what/?" handler={What}/>
-    <Route name="product" path="what/:name" handler={Product}/>
+    <Route name="tree" path="tree" handler={Tree}/>
 
     <Route path="styleguide/base" name="styleguide-base" handler={StyleguideBase}/>
     <Route path="styleguide/case-study" name="styleguide-case-study" handler={StyleguideCaseStudy}/>

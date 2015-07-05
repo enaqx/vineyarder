@@ -18,17 +18,11 @@ var StaticTools = require('./lib/StaticTools');
 
 var htmlComponent = React.createFactory(require('./components/HTML'));
 var routes = require('./components/Routes');
-var Collections = require('./components/Collections');
 var VineyarderRes = require('./assets/resources/VineyarderResources');
 
-// TODO: Remove this
-var productNames = _.pluck(Collections.Products, 'name');
-var jobNames = _.pluck(Collections.Jobs, 'name');
 
 var pages = StaticTools.gather(routes);
 
-// TODO: Rename to "Why"
-pages = StaticTools.interpolate(pages, '/what/:name', 'name', productNames);
 
 // Write the sitemap with the pages we have so far
 StaticTools.writeFile(outputDir, '/sitemap.xml',

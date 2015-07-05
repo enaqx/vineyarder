@@ -1,13 +1,12 @@
-/*global document, window, location */
-"use strict";
-var _ = require("lodash");
-var $ = require("jquery");
-var React = require("react/addons");
-var Router = require("react-router");
+'use strict';
+
+var _ = require('lodash');
+var $ = require('jquery');
+var React = require('react/addons');
+var Router = require('react-router');
 
 var ContactOverlay = require("./ContactOverlay");
 var MenuOverlay = require("./MenuOverlay");
-var Collections = require("./Collections");
 
 var pictureFill;
 var FastClick;
@@ -107,7 +106,6 @@ var Layout = React.createClass({
     var childProps = _.extend({}, this.props, {
       openContact: this.openContact,
       openMenu: this.openMenu,
-      collections: Collections,
       small: this.state.small
     });
 

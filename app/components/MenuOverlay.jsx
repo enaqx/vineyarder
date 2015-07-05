@@ -28,10 +28,6 @@ var MenuOverlay = React.createClass({
               <span className="subtitle-link">The approach</span>
             </Router.Link>
 
-            <Router.Link to="what">
-              <span className="title-link">What</span>
-              <span className="subtitle-link">Our work</span>
-            </Router.Link>
           </div>
           <div className="level-bottom">
             <a href="http://blog.percolatestudio.com" className="monochrome">Blog</a>

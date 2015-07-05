@@ -1,4 +1,3 @@
-/* global history */
 "use strict";
 var _ = require("lodash");
 var React = require("react");
@@ -7,10 +6,6 @@ var Router = require("react-router");
 // update the current page state with ourState, if history.replaceState
 //   is defined. If not, don't bother.
 var setHistoryState = function(ourState) {
-  if (!history.replaceState) {
-    return;
-  }
-
   var newState = _.extend({}, history.state, ourState);
   history.replaceState(newState);
 };
@@ -74,7 +69,6 @@ var Nav = React.createClass({
         <div className="nav-group">
           <NavLink to="home">Home</NavLink>
           <NavLink to="how">How</NavLink>
-          <NavLink to={["what", "product"]}>Why</NavLink>
           <a className="menu-link" onClick={this.props.openMenu.bind(null, true)}>Menu</a>
         </div>
 

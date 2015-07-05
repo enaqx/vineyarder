@@ -19,8 +19,6 @@ The run the development node server (app/server.js)
 $ grunt
 ```
 
-This will use `nodemon` and `webpack` to watch for changes and restart and rebuild as the app as needed.
-
 Open [http://localhost:3000](http://localhost:3000)
 
 ### Production
@@ -40,9 +38,3 @@ $ http-server
 ```
 
 Open [http://localhost:8080](http://localhost:8080)
-
-
-
-#### Comments list
-##### package.json
-

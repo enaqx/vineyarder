@@ -2,6 +2,7 @@
 var _ = require("lodash");
 var $ = require("jquery");
 var React = require("react/addons");
+var VineyarderRes = require('../assets/resources/VineyarderResources');
 
 var autosize;
 
@@ -35,38 +36,6 @@ var ContactOverlay = React.createClass({
   }
 });
 
-var Footer = React.createClass({
-  render: function() {
-    return (
-      <div className="ancillary-contact vcard">
-        <div className="wrapper-connect">
-          <div className="title-ancillary">Connect</div>
-          <div className="list">
-            <a className="url monochrome" href="http://twitter.com/percolatestudio" target="_blank">Twitter</a>
-            <a className="url monochrome" href="http://github.com/percolatestudio" target="_blank">Github</a>
-            <a className="email monochrome" href="mailto:us@percolatestudio.com?subject=Hello%20Percolate">Email</a>
-          </div>
-        </div>
-        <div className="wrapper-visit">
-          <div className="title-ancillary">Visit Us</div>
-          <a className="location-wrapper organization-unit adr"
-            href="https://www.google.com/maps/place/169+11th+St,+San+Francisco,+CA+94103/@37.77357,-122.415787,17z/data=!3m1!4b1!4m2!3m1!1s0x8085809d83ced185:0xf5e9ad23d5cd5ce5" target="_blank">
-            <span className="fn organization-name" style={ {display: "none"} }>Vineyarder</span>
-            <span>Vineyarder</span><br/>
-            <span className="street-address">169 11th Street</span><br/>
-            <span className="locality">San Francisco</span>, <span className="region">CA</span> <span className="postal-code">94103</span>
-          </a>
-          <a className="location-wrapper organization-unit adr"
-            href="https://www.google.com/maps/place/50+Herbert+St,+Northcote+VIC+3070,+Australia/@-37.771764,144.995165,17z/data=!3m1!4b1!4m2!3m1!1s0x6ad6437ca420f13f:0xb6908ada5cdfa379" target="_blank">
-            <span>Percolate AUS</span><br/>
-            <span className="street-address">50 Herbert Street</span><br/>
-            <span className="locality">Melbourne</span>, <span className="region">VIC</span> <span className="postal-code">3001</span>
-          </a>
-        </div>
-      </div>
-    );
-  }
-});
 
 // Gathers all truthy values in obj referenced by keys and returns matching
 // keys in an array
@@ -305,7 +274,6 @@ var Form = React.createClass({
           </div>
           <button className="btn-primary caps" disabled={this.state.submitting} type="submit">Send Message</button>
         </fieldset>
-        <Footer />
       </form>
     );
   }

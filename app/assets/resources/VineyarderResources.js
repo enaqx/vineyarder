@@ -9,8 +9,7 @@ var strResources = {};
 strResources.NAME = 'Vineyarder';
 strResources.SLOGAN = 'Your new grape pruning assistance';
 strResources.TITLE = strResources.NAME + ': ' + strResources.SLOGAN;
-strResources.DESCRIPTION = 'Do you care about your vineyard? ' +
-  'Let us help you prune it correctly.';
+strResources.DESCRIPTION = 'Let us help you prune grape tree';
 strResources.URL = 'http://vineyarder.co';
 
 
@@ -44,7 +43,10 @@ strResources.HOW_TITLE = 'How';
 strResources.HOW_TEXT = 'We wil thoroughly analyse picture of your grape tree '
   + 'and make recognized model from it. It will magically simplify help us to '
   + 'understand places you need to cut. After that we visualize schematic tree '
-  + 'with necessary info for';
+  + 'with necessary info for you.';
+
+// Why page collage
+strResources.WHY_TITLE = 'Why';
 
 
 module.exports = strResources;

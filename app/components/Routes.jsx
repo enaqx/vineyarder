@@ -5,7 +5,6 @@ var Router = require('react-router');
 var Layout = require('./Layout');
 var Home = require('./Home');
 var How = require('./How');
-var Tree = require('./Tree');
 
 
 var NotFound = require('./NotFound');
@@ -27,10 +26,7 @@ var NotFoundRoute = Router.NotFoundRoute;
 var routes = (
   <Route name="appBody" path="/" handler={Layout}>
     <DefaultRoute name="home" handler={Home}/>
-
     <Route name="how" path="how/?" handler={How}/>
-
-    <Route name="tree" path="tree" handler={Tree}/>
 
     <Route path="styleguide/base" name="styleguide-base" handler={StyleguideBase}/>
     <Route path="styleguide/case-study" name="styleguide-case-study" handler={StyleguideCaseStudy}/>
